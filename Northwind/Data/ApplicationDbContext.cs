@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Northwind.Models;
 
 namespace Northwind.Data
 {
@@ -9,5 +10,6 @@ namespace Northwind.Data
             : base(options)
         {
         }
+        public DbSet<Northwind.Models.Product> Product { get; set; } = default!;
     }
 }
