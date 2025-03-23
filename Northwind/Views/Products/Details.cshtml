@@ -1,20 +1,31 @@
 ﻿@model Northwind.Models.Product
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details " + Model.productName;
 }
 
-<h1>Details</h1>
+<h1>@Model.productName</h1>
 
 <div>
-    <h4>Product</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.productName)
+            @Html.DisplayNameFor(model => model.supplierId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.productName)
+            @Html.DisplayFor(model => model.supplierId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+        <dd class="col-sm-10">
+			@ViewBag.CategoryName
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.quantityPerUnit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.quantityPerUnit)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.unitPrice)
@@ -34,11 +45,17 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.unitsOnOrder)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.category)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.reorderLevel)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.category.categoryId)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.reorderLevel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.discontinued)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.discontinued)
         </dd>
     </dl>
 </div>

@@ -22,7 +22,7 @@ public class Product
     public int reorderLevel { get; set; }
     public bool discontinued { get; set; }
     [ForeignKey("categoryId")]
-    public Category category { get; set; }
+    public Category? category { get; set; }
 }
 
 
