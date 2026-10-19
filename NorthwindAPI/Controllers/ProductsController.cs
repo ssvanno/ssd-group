@@ -28,7 +28,15 @@ namespace NorthwindAPI.Controllers
                            where product.CategoryId == id
                            where product.Discontinued == false
                            select product;
-            return await products.AsNoTracking().ToListAsync();
+
+            var productsList = await products.AsNoTracking().ToListAsync();
+
+            if (productsList == null || productsList.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return productsList;
         }
 
         // GET: api/Products/5
